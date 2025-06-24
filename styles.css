@@ -1,0 +1,119 @@
+/* Body and container styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+  text-align: center;
+  background: #f5f7fa;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Profile image with fade-in */
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.2s;
+}
+
+/* Name fade-in */
+.name {
+  font-size: 2.5rem;
+  margin: 15px 0 10px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.4s;
+}
+
+/* Intro paragraphs fade-in with delay */
+.intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.intro:nth-of-type(1) {
+  animation-delay: 0.6s;
+}
+
+.intro:nth-of-type(2) {
+  animation-delay: 0.8s;
+}
+
+/* Contact Me button */
+#contactBtn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#contactBtn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Contact card styles */
+.contact-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px 35px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  width: 320px;
+  text-align: center;
+}
+
+.contact-card.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Close button inside card */
+#closeCard {
+  margin-top: 20px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  border: none;
+  background-color: #dc4e35;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#closeCard:hover {
+  background-color: #bd1d1d;
+}
+
+/* Fade-in keyframes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+  
+  
