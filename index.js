@@ -13,6 +13,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("card-open");
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const tictactoebox = document.querySelector(".tictactoebox");
+
+  if (tictactoebox) {
+    tictactoebox.addEventListener("click", function () {
+      alert("You clicked the Tic Tac Toe box!");
+    });
+  }
+});
+
 
 
 

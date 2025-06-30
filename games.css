@@ -1,0 +1,134 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    color: #333;
+}
+
+/* Game Container */
+.game-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 90%;
+    width: 400px; /* Adjust as needed */
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+}
+
+/* Game Board */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    width: 300px; /* Width of the board */
+    height: 300px; /* Height of the board */
+    margin: 0 auto 30px auto;
+    background-color: #ccc; /* Grid lines background */
+    border-radius: 5px;
+    overflow: hidden; /* Ensures cells stay within rounded corners */
+}
+
+/* Individual Cells */
+.cell {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e6ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+    color: #34495e; /* Default color for X/O */
+}
+
+.cell:hover {
+    background-color: #d1d9e0;
+    transform: scale(1.02);
+}
+
+/* Styles for cells containing 'X' or 'O' (set by JavaScript) */
+.cell.x {
+    color: #e74c3c; /* Red for X */
+}
+
+.cell.o {
+    color: #3498db; /* Blue for O */
+}
+
+/* Status Message */
+.game-status {
+    margin-top: 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #27ae60; /* Green for success/info messages */
+    min-height: 1.5em; /* Prevent layout shift when message appears */
+}
+
+/* Reset Button */
+#reset-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: #9b59b6; /* Purple button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#reset-button:hover {
+    background-color: #8e44ad;
+}
+
+#reset-button:active {
+    transform: translateY(1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .game-container {
+        padding: 20px;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .game-board {
+        width: 270px;
+        height: 270px;
+        gap: 6px;
+    }
+
+    .cell {
+        font-size: 2.5em;
+    }
+
+    .game-status {
+        font-size: 1.2em;
+    }
+
+    #reset-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
